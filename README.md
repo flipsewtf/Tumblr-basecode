@@ -3,7 +3,7 @@ Most of us theme-makers have used jQuery since the beginning of Tumblr because m
 
 ## Terms of use
 +   This is a basecode template, not a full theme, so do not use it as such.
-+   Make literally whatever you want with this, all I ask is a credit link in the code or on your credits page back to mournstera.tumblr.com.
++   Please make significant changes to it, (make literally whatever you want with this), but with a credit link in the code or on your credits page back to mournstera.tumblr.com.
 +   I generally do not provide coding support (as per my FAQ,) But I did make this basecode so if you're a theme-maker, do not hesitate to ask.
 
 ## Credits
