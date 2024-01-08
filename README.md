@@ -1,5 +1,5 @@
-# Tumblr-basecode
-A Rich, jQuery-free Tumblr Basecode template. Most of us theme-makers have used jQuery since the beginning of Tumblr because many scripts reqired it, but ~~I'm~~ we're finally at a point where stuff can be done without. This is designed for you to not rely on jquery at all.
+# A Rich, jQuery-free Tumblr Basecode template
+Most of us theme-makers have used jQuery since the beginning of Tumblr because many scripts reqired it, but ~~I'm~~ we're finally at a point where stuff can be done without. This is designed for you to not rely on jQuery at all.
 
 ## Terms of use
 +   This is a basecode template, not a full theme, so do not use it as such.
