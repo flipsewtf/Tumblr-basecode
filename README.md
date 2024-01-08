@@ -1,5 +1,5 @@
 # Tumblr-basecode
-A Rich, jQuery-free Tumblr Basecode template. Most of us theme-makers have used jQuery since the beginning of Tumblr because many scripts reqired it, but no more! well, if you want to, go ahead, but this is designed for you to not rely on jquery at all.
+A Rich, jQuery-free Tumblr Basecode template. Most of us theme-makers have used jQuery since the beginning of Tumblr because many scripts reqired it, but ~~I'm~~ we're finally at a point where stuff can be done without. This is designed for you to not rely on jquery at all.
 
 ## Terms of use
 +   This is a basecode template, not a full theme, so do not use it as such.
@@ -9,19 +9,28 @@ A Rich, jQuery-free Tumblr Basecode template. Most of us theme-makers have used 
 ## Credits
 In this basecode I've used the following resources:
 
+**For displaying tumblr photosets npf:**
 + [@eggdesign](https://egg.design)'s [reverse compatible template](https://github.com/cornetespoir/npf-theme-base/blob/main/reverse-compatible-template.html)
 + [@eossa](https://eossa.studio)'s [reverse compatible template add-on](https://codepen.io/juliasteiwer/pen/yLGvKjV) *(if you have more than one photoset in a post, wrap photosets in divs)*
+
+**For displaying tumblr photosets legacy:**
 + [@Spacetchi](https://spacetchi.tumblr.com)'s [5ppi Flexible (legacy) Photoset](https://github.com/Spacetchi/tumblr-flexible-photoset/tree/master)
+
+**Other**
 + [Phosphor Icons](https://phosphoricons.com)
 + Tooltips by [Tippy.js](https://atomiks.github.io/tippyjs)
 + Dark mode by me [@mournstera](https://mournstera.tumblr.com) *(a modified version of [this plugin](https://mournstera.tumblr.com/plugins/darkmode))*
 + Custom like and reblog button, modified vesion of [this](https://stackoverflow.com/questions/21708662/customise-tumblrs-new-like-button-iframe-likebutton/21715659#21715659)
 
-## Notes
+
+> [!IMPORTANT]
+> It's vital for me to appreciate @eggdesign and @Spacetchi's work. without it, a jQuery-free theme wouldn't be possible!
+
+## Comments
 
 I've tried to include different kinds of JavaScript snippets such as a slide-down toggle menu, hide tumblr controls behind an icon, an update tab, tags on click, a dark mode toggle and shorten notecount, etc.
 
-This basecode utilizes CSS Variables, (especially for the dark/light mode toggles, and it's also just easier in the long run) as well as Tippy.js for the tooltips.
+This basecode utilizes [CSS Variables](https://www.w3schools.com/css/css3_variables.asp), (especially for the dark/light mode, and it's also just easier in the long run because it saves time), as well as Tippy.js for the tooltips.
 
 Phosphor Icons has been initialized just as an icon example (especially for custom like and reblog icons).
 
@@ -29,4 +38,7 @@ I've made *a lot* of comments in this document, I'm sorry if it's a bit much, bu
       
 If you don't already, please use chrome devtools or firefox inspect to really get a handle on this basecode, the classes and such.
 
-## Suggestions
+## Suggestions & help
+I use other resouces for my Tumblr themes that I didn't include in the basecode. To make legacy audio post match npf audio posts I use [@glenthemes](https://glenthemes.tumblr.com)'s [NPF Audio Player](https://glenthemes.tumblr.com/post/722160746171072512/npf-audio-player) alongside [@annasthms](https://annasthms.tumblr.com/)'s [customaudio.js](https://annasthms.tumblr.com/more/js/customaudio/new).
+
+Pure Javascript isn't more difficult than jQuery, it just takes a few more lines of code, but on the other hand you don't have to loade an entire library just to make a navigation toggle 😁 
