@@ -929,7 +929,21 @@ iframe.tumblr_audio_player {
     max-height: 85px;
     width: 100%;
 }
-/* -------------------------------------  link */
+
+/* -------------------------------------  POST TYPE: audio */
+.audio_player {
+    max-height: 27px;
+}
+.tmblr-full>.audio-caption .audio-details {
+    padding: 0;
+    flex: 1;
+}
+.tmblr-full>.audio-caption .album-cover {
+    flex: none;
+    margin-left: var(--text-margin);
+    border-radius: var(--round1);
+}
+/* -------------------------------------  POST TYPE: link */
 
 /* recreated tumblr's npf style of
 link posts so legacy will match. see
@@ -1243,9 +1257,29 @@ calc() with post width + however wide the sidebar is + 100px or so.*/
                     </div>
                 {/block:Video}
                 
-                <!-- legacy audio -->
+		<!-- legacy audio styled as npf audio -->
                 {block:Audio}
-                    {AudioEmbed-640}
+                    <figure class="tmblr-full">
+                        {/block:AudioPlayer}
+                            <figcaption class="audio-caption">
+                                <span class="tmblr-audio-meta audio-details">
+                                    {block:TrackName}
+                                        <span class="tmblr-audio-meta title">{TrackName}</span>
+                                    {/block:TrackName}
+                                    {block:Artist}
+                                        <span class="tmblr-audio-meta artist">{Artist}</span>
+                                    {/block:Artist}
+                                    {block:Album}
+                                        <span class="tmblr-audio-meta album">{TrackName}</span>
+                                    {/block:Album}
+                                </span>
+                                {block:AlbumArt}
+                                <img class="album-cover" src="{AlbumArtURL}" alt="image">
+                                {/block:AlbumArt}
+                            </figcaption>
+                            {AudioPlayer}
+                        {/block:AudioPlayer}
+                    </figure>
                 {/block:Audio}
                 
                 <!-- ask -->
