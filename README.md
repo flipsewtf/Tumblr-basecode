@@ -39,6 +39,6 @@ I've made *a lot* of comments in this document, I'm sorry if it's a bit much, bu
 If you don't already, please use chrome devtools or firefox inspect to really get a handle on this basecode, the classes and such.
 
 ## Suggestions & help
-I use other resouces for my Tumblr themes that I didn't include in the basecode. To make legacy audio post match npf audio posts I use [@glenthemes](https://glenthemes.tumblr.com)'s [NPF Audio Player](https://glenthemes.tumblr.com/post/722160746171072512/npf-audio-player) alongside [@annasthms](https://annasthms.tumblr.com/)'s [customaudio.js](https://annasthms.tumblr.com/more/js/customaudio/new). If you're looking to use [@bychloethemes](https://bychloethemes.tumblr.com/plugins/timeago)'s Timeago plugin, I wrote a jQuery-free one [here](https://github.com/flipsewtf/TimeAgo).
+If you're looking to use [@bychloethemes](https://bychloethemes.tumblr.com/plugins/timeago)'s Timeago plugin, I wrote a jQuery-free one [here](https://github.com/flipsewtf/TimeAgo)
 
 Pure Javascript isn't more difficult than jQuery, it just takes a few more lines of code, but on the other hand you don't have to loade an entire library just to make a navigation toggle 😁 
