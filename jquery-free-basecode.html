@@ -1222,7 +1222,7 @@ calc() with post width + however wide the sidebar is + 100px or so.*/
                 
                 <!-- legacy link (styled as npf) -->
                 {block:link}
-                    <div class="npf-link-block {block:Thumbnail}has-poster"{/block:Thumbnail}>
+                    <div class="npf-link-block {block:Thumbnail}has-poster{/block:Thumbnail}">
                         <a {Target} href="{URL}" class="link">
                             <div {block:Thumbnail}class="poster" style="background:url({Thumbnail-HighRes}); background-position: 50%; background-repeat: no-repeat; background-size: cover; background-clip: content-box;"{/block:Thumbnail}>
                                 <div class="title">{Name}</div>
