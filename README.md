@@ -3,7 +3,7 @@ Most of us theme-makers have used jQuery since the beginning of Tumblr because m
 
 ## Terms of use
 +   This is a basecode template, not a full theme, so do not use it as such.
-+   Please make significant changes to it, (make literally whatever you want with this), but with a credit link in the code or on your credits page back to lushwave.tumblr.com.
++   Please make significant changes to it, (make literally whatever you want with this), but with a credit link in the code or on your credits page back to mournstera.tumblr.com.
 +   I generally do not provide coding support (as per my FAQ,) But I did make this basecode so if you're a theme-maker, do not hesitate to ask.
 
 ## Credits
@@ -19,7 +19,7 @@ In this basecode I've used the following resources:
 **Other**
 + [Phosphor Icons](https://phosphoricons.com)
 + Tooltips by [Tippy.js](https://atomiks.github.io/tippyjs)
-+ Dark mode by me [@lushwave](https://lushwave.tumblr.com) *(a modified version of [this plugin](https://lushwave.tumblr.com/plugins/darkmode))*
++ Dark mode by me [@mournstera](https://mournstera.tumblr.com) *(a modified version of [this plugin](https://mournstera.tumblr.com/plugins/darkmode))*
 + Custom like and reblog button, modified vesion of [this](https://stackoverflow.com/questions/21708662/customise-tumblrs-new-like-button-iframe-likebutton/21715659#21715659)
 
 
