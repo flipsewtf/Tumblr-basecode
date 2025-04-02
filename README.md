@@ -20,6 +20,7 @@ In this basecode I've used the following resources:
 + [Phosphor Icons](https://phosphoricons.com)
 + Tooltips by [Tippy.js](https://atomiks.github.io/tippyjs)
 + Dark mode by me [@mournstera](https://mournstera.tumblr.com) *(a modified version of [this plugin](https://mournstera.tumblr.com/plugins/darkmode))*
++  UnifyAudio by me [@mournstera](https://mournstera.tumblr.com) this [this plugin](https://github.com/flipsewtf/UnifyAudio)
 + Custom like and reblog button, modified vesion of [this](https://stackoverflow.com/questions/21708662/customise-tumblrs-new-like-button-iframe-likebutton/21715659#21715659)
 
 
