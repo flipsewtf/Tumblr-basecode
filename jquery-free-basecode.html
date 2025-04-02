@@ -226,7 +226,7 @@ p,h1,h2,h3,h4,h5,h6 {
     font-size: var(--font-size);
     font-weight: 400;
     text-align:center;
-    padding: 0;
+    padding: 1rem;
     color: rgb(var(--c-bg1));
     border: 0px solid rgb(var(--c-border));
     border-radius: var(--round1);
@@ -234,6 +234,20 @@ p,h1,h2,h3,h4,h5,h6 {
     text-transform: lowercase;
     margin: 1.5rem;
     z-index: 9999999;
+}
+@keyframes smooth-fade {
+    from {
+        opacity: 0;
+        transform: scale(0.9) translateY(2px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+.tippy-box[data-animation='smooth-fade'] {
+    animation: smooth-fade 0.25s ease-out;
 }
 /* ------------------------------------- tumblr lightbox */
 .vignette, #vignette {
@@ -915,18 +929,105 @@ iframe.tumblr_audio_player {
     width: 100%;
 }
 
-/* -------------------------------------  POST TYPE: audio */
-.audio_player {
-    max-height: 27px;
+/* -----------------------------------------------------  POST TYPE: audio */
+
+/* .audio-caption is set as flex by tumblr as default, but we need it to be display block */
+.tmblr-full>.audio-caption {
+    display: block!important;
 }
-.tmblr-full>.audio-caption .audio-details {
-    padding: 0;
-    flex: 1;
-}
-.tmblr-full>.audio-caption .album-cover {
-    flex: none;
-    margin-left: var(--text-margin);
+/* wrapper for entire audio post */
+figcaption.audio-caption {
+    background: rgb(var(--c-bg2));
+    border: 1px solid rgb(var(--c-border));
     border-radius: var(--round1);
+}
+/* wrapper for button, audio details and album */
+.audio-info {
+    display: flex;
+    align-items: center;
+    gap: var(--gap2);
+    padding: var(--gap2);
+}
+/* audio text (album title, etc.) */
+.tmblr-full>.audio-caption .audio-details {
+    max-width: 100%;
+    padding: 0;
+    flex: auto;
+}
+/* album cover */
+.tmblr-full>.audio-caption .album-cover {
+    width: 80px;
+    height: 80px;
+    border-radius: var(--round1);
+    object-fit: cover;
+}
+/* play-pause button wrapper */
+.custom-audio-player-container .play-pause {
+    display: flex;
+}
+/* play-pause svg */
+.custom-audio-player-container .play-pause svg {
+    width: calc(var(--font-size) + 14px);
+    height: calc(var(--font-size) + 14px);
+    color: rgb(var(--c-text));
+}
+/* Tumblr has a 1.2em on artist text, resetting it here */
+.tmblr-full>.audio-caption .album, .tmblr-full>.audio-caption .artist {
+    font-size: 1em;
+    line-height: 1.5;
+}
+/* wrapper for progress bar and time display */
+.progress-bar-container {
+    display: flex;
+    align-items: center;
+    gap: var(--gap2);
+    border-top: 1px solid rgb(var(--c-border));
+    padding: var(--gap2);
+}
+ 
+/* Style the track (actually range input itself but it's only for chrome) */
+.progress-bar {
+    width: 100%;
+    height: 10px;
+    -webkit-appearance: none;  /* Removes the default styling in most browsers */
+    background: rgb(var(--c-bg1));
+    border-radius: var(--round2);
+    border: 1px solid rgb(var(--c-border));
+}
+
+/* Style the track for both WebKit and Mozilla browsers */
+.progress-bar::-webkit-slider-runnable-track,
+.progress-bar::-moz-range-track {
+    width: 100%;
+    height: 10px;
+    background: rgb(var(--c-bg1));
+    border-radius: var(--round2);
+    border: 1px solid rgb(var(--c-border));
+}
+
+/* Style the thumb for WebKit (Chrome, Safari, etc.) */
+.progress-bar::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 14px;
+    height: 14px;
+    background: rgb(var(--c-acc1));
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* Style the thumb for Mozilla (Firefox) */
+.progress-bar::-moz-range-thumb {
+    width: 14px;
+    height: 14px;
+    background: rgb(var(--c-acc1));
+    border:0; /* remove weird border in firefox */
+    border-radius: 50%;
+    cursor: pointer;
+}
+/* time display */
+.time-display {
+    flex-shrink: 0;
 }
 /* -------------------------------------  POST TYPE: link */
 
@@ -1475,10 +1576,12 @@ calc() with post width + however wide the sidebar is + 100px or so.*/
 <!-- PHOTOSET: legacy -->
 <script src="https://static.tumblr.com/diajl5m/y39s6mwvr/legacy-photoset.js"></script>
 <!-- TOOLTIP: tippy.js -->
-<script src="https://unpkg.com/@popperjs/core@2"></script>
-<script src="https://unpkg.com/tippy.js@6"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/tippy.js@6.3.7/dist/tippy.umd.min.js"></script>
 <!-- ICONS: phosphor -->
 <script src="https://cdn.jsdelivr.net/npm/@phosphor-icons/web"></script>
+<!-- AUDIO: UnifyAudio https://github.com/flipsewtf/UnifyAudio -->
+<script src="https://static.tumblr.com/diajl5m/mobsquso5/unify_audio.js"></script>
 
 <script>
 document.addEventListener("DOMContentLoaded", function () {
@@ -1487,8 +1590,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const control = document.querySelector(".controls");
     
     control.addEventListener("click", function () {
-        document.querySelector(".tmblr-iframe").classList.toggle("active");
         document.querySelector(".spin").classList.toggle("active");
+        document.querySelector(".tmblr-iframe").classList.toggle("active");
     });
 
     // ------------------- scroll to top button
@@ -1578,6 +1681,7 @@ const commonOptions = {
     followCursor: true,
     placement: "top",
     touch: "hold",
+    animation: 'smooth-fade',
 };
 
 tippy("[title]", {
